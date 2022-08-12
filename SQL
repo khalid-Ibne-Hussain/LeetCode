@@ -3,12 +3,38 @@
       from Employee as a,Employee as b
       wherea.ManagerId = b.Id and a.Salary > b.Salary;
 
-
 182. Duplicate Emails
       select email 
       from person
       group by email
       having count(*)>1
       
-  
 183.
+
+595. Big Countries
+      select name, population, area
+      from world
+      where area>=3000000 or population>=25000000
+      
+1757. Recyclable and Low Fat Products
+      select product_id
+      from products
+      where low_fats like 'Y' and recyclable like 'Y'
+      NOTE: we can use '=' insted of 'like'
+
+584. Find Customer Referee
+      select name
+      from customer
+      where referee_id !=2 or referee_id is null
+      
+183. Customers Who Never Order
+      select name as customers
+      from customers left join orders
+      on customers.id = orders.customerId
+      where orders.customerId is null
+
+      OR
+
+      select Name as Customers
+      from Customers
+      where Customers.Id not in (select CustomerId from Orders)
