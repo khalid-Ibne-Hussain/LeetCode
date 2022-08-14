@@ -50,6 +50,10 @@
       where table1.email=table2.email and table1.id>table2.id
       # Write a DELETE statement and DO NOT write a SELECT statement
       
-      
+1667. Fix Names in a Table
+      select user_id, concat(upper(left(name,1)),lower(substring(name,2))) as name
+      from Users
+      order by user_id
+
       
 
