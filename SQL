@@ -38,3 +38,18 @@
       select Name as Customers
       from Customers
       where Customers.Id not in (select CustomerId from Orders)
+      
+627. Swap Salary
+      update Salary 
+      set sex =if( sex='m','f','m');
+      # we can not use select 
+      
+196. Delete Duplicate Emails
+      delete table1
+      from person as table1, person as table2
+      where table1.email=table2.email and table1.id>table2.id
+      # Please write a DELETE statement and DO NOT write a SELECT statement.
+      
+      
+      
+
